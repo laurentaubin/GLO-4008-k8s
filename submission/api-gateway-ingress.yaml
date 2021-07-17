@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-gateway-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/polarity
+        pathType: Prefix
+        backend:
+          service:
+            name: logic-api
+            port:
+              number: 5000 # à revoir
+      - path: /api/feedback
+        pathType: Prefix
+        backend:
+          service:
+            name: feedback-api
+            port:
+              number: 9000 # à revoir

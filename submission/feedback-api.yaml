@@ -23,7 +23,7 @@ spec:
           imagePullPolicy: Always
           name: feedback-api
           ports:
-            - containerPort: 8080
+            - containerPort: 9000
               protocol: TCP
           env:
             - name: DATABASE_DIR
@@ -34,7 +34,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /health
-              port: 8080
+              port: 9000
             initialDelaySeconds: 3
             periodSeconds: 3
       volumes:
@@ -54,4 +54,4 @@ spec:
     app: feedback-api
     system: primary
   ports:
-    - port: 8080
+    - port: 9000
