@@ -13,13 +13,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: logic-api
+            name: logic-api-service
             port:
-              number: 5000 # à revoir
+              number: 5000
       - path: /api/feedback
         pathType: Prefix
         backend:
           service:
-            name: feedback-api
+            name: feedback-api-service
             port:
-              number: 9000 # à revoir
+              number: 9000

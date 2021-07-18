@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: networking.k8s.io/v1
 kind: Deployment
 metadata:
   name: frontend
@@ -21,7 +21,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: localregistry.lc:30500/frontend
+        - image: localregistry.lc:30500/frontend:submission
           imagePullPolicy: Always
           name: frontend
           ports:
