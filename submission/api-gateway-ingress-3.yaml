@@ -16,3 +16,10 @@ spec:
             name: feedback-api-service
             port:
               number: 9000
+      - path: /admin/feedback
+        pathType: Exact
+        backend:
+          service: 
+            name: feedback-api-service
+            port:
+              number: 9000
