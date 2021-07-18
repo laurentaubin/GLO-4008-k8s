@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: feedback-api-deployment
+  name: feedback-api
   labels:
     app: feedback-api
 spec:

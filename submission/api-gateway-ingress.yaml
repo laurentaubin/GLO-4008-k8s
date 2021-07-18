@@ -9,6 +9,13 @@ spec:
   rules:
   - http:
       paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80
       - path: /api/polarity
         pathType: Exact
         backend:

@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: logic-api-deployment
+  name: logic-api
   labels:
-    app: logic-api-deployment
+    app: logic-api
 spec:
   replicas: 2
   selector:
