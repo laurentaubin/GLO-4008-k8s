@@ -10,14 +10,14 @@ spec:
   - http:
       paths:
       - path: /api/polarity
-        pathType: Prefix
+        pathType: Exact
         backend:
           service:
             name: logic-api-service
             port:
               number: 5000
       - path: /api/feedback
-        pathType: Prefix
+        pathType: Exact
         backend:
           service:
             name: feedback-api-service

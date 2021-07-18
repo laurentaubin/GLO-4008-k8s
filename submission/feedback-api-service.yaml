@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: feedback-api-service
   labels: 
-    app: feed-api-service
+    app: feedback-api-service
 spec:
   selector:
     app: feedback-api
   ports:
-    - port: 9000
+    - protocol: TCP
+      port: 9000

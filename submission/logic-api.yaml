@@ -5,16 +5,10 @@ metadata:
   labels:
     app: logic-api-deployment
 spec:
-  minReadySeconds: 15
   replicas: 2
   selector:
     matchLabels:
       app: logic-api
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -23,12 +17,6 @@ spec:
       containers:
         - image: localregistry.lc:30500/logic-api:submission
           imagePullPolicy: Always
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
           name: logic-api
           ports:
             - containerPort: 5000
