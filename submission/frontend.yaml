@@ -1,9 +1,9 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: frontend-deployment
   labels:
-    app: frontend
+    app: frontend-deployment
 spec:
   selector:
     matchLabels:

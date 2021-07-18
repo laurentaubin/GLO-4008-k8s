@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: feedback-api
+  name: feedback-api-deployment
   labels:
-    app: feedback-api
+    app: feedback-api-deployment
   namespace: default
 spec:
   selector:
@@ -38,17 +38,3 @@ spec:
         - name: sqlite-volume
           persistentVolumeClaim:
             claimName: sqlite-pvc
-
----
-
-apiVersion: networking.k8s.io/v1
-kind: Service
-metadata:
-  name: feedback-api-service
-  labels: 
-    app: feed-
-spec:
-  selector:
-    app: feedback-api
-  ports:
-    - port: 9000
