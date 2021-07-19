@@ -21,8 +21,14 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: localregistry.lc:30500/frontend
+        - image: localregistry.lc:30500/frontend:submission
           imagePullPolicy: Always
           name: frontend
           ports:
             - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 3
