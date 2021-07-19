@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api-gateway-ingress3
+  name: api-gateway-ingress-admin
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
     - http:
         paths:
-          - path: /admin/(/|$)(.*)
-            pathType: Exact
+          - path: /admin(/|$)(.*)
+            pathType: Prefix
             backend:
               service:
                 name: feedback-api-service
